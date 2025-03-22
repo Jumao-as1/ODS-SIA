@@ -60,7 +60,7 @@
                                 {{ $donation->anonymous ? 'Yes' : 'No' }}
                             </td>
                             <td class="py-2 px-4 border border-gray-300 text-center">
-                                @if (auth()->check() && auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Manager'))
+                                @if (auth()->check() && auth()->user()->hasRole('Administrator') || auth()->user()->hasRole('Administrator'))
                                     <div class="flex justify-center space-x-2">
                                         <a href="{{ route('donations.edit', $donation) }}"
                                             class="bg-dark hover:bg-gray-100 hover:text-primary border-1 hover:border-primary text-white font-bold py-1 px-3 rounded transition cursor-pointer hover:scale-110 hover:opacity-80 duration-300 ease-in-out">

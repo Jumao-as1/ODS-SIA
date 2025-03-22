@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/store', [DonationController::class, 'store'])->name('donations.store');
 
         // Only Admin & Manager can edit or delete donations
-        Route::middleware(['role:Admin|Manager'])->group(function () {
+        Route::middleware(['role:Administrator'])->group(function () {
             Route::get('/{donation}/edit', [DonationController::class, 'edit'])->name('donations.edit');
             Route::put('/{donation}', [DonationController::class, 'update'])->name('donations.update');
             Route::delete('/{donation}', [DonationController::class, 'destroy'])->name('donations.destroy');
